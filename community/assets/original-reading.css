@@ -1,0 +1,15 @@
+main { margin-top: 22px; padding: clamp(21px, 4vw, 42px); }
+h1 { font-size: clamp(25px, 3vw, 33px); line-height: 1.35; }
+h2 { margin: 27px 0 12px; font-size: 21px; line-height: 1.4; }
+p { font-size: 17px; line-height: 1.75; }
+.school { margin-bottom: 12px; }
+.mine { margin-bottom: 10px; }
+.by { margin: 9px 0 25px; }
+figure { margin: 20px 0; }
+figure img { max-height: min(54vh, 460px); }
+figure a { display: block; }
+@media (max-width: 600px) {
+  main { width: calc(100% - 18px); margin-top: 12px; }
+  p { font-size: 16px; }
+  .top span { display: none; }
+}

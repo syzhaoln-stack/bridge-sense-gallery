@@ -1,0 +1,108 @@
+:root {
+  color-scheme: light;
+  font-family: "Microsoft YaHei", "PingFang SC", system-ui, sans-serif;
+  color: #153f39;
+  --paper: #faf8f2;
+  --ink: #153f39;
+  --orange: #ab4929;
+  --muted: #516961;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: #e8ebe5; }
+button, a { font: inherit; }
+button:focus-visible, a:focus-visible { outline: 3px solid #bc5a31; outline-offset: 3px; }
+.navigation {
+  min-height: 63px; display: flex; align-items: center; gap: 38px;
+  padding: 10px clamp(16px, 4vw, 64px); background: var(--paper); border-bottom: 1px solid #c8d2c9;
+}
+.home-link { color: var(--ink); font-weight: 700; text-decoration: none; white-space: nowrap; }
+.home-link span { margin-right: 5px; }
+.case-nav { display: flex; gap: 4px; }
+.case-nav button { border: 0; background: none; color: var(--ink); padding: 7px 13px; cursor: pointer; border-radius: 4px; }
+.case-nav button:hover { background: #e2eae2; }
+.case-nav button[aria-pressed=true] { background: var(--ink); color: white; }
+.navigation [data-capture-toolbar] { margin-left: auto; }
+[data-capture-stage] { min-width: 0; }
+.compare-board {
+  width: 1600px; height: 900px; padding: 43px 65px 30px;
+  margin: 0 auto; overflow: hidden; background: var(--paper); color: var(--ink);
+  display: flex; flex-direction: column; position: relative;
+}
+.compare-board p,.compare-board h1,.compare-board h2,.compare-board h3,.compare-board figure { margin: 0; }
+.section-name { display: flex; align-items: center; gap: 16px; font-size: 21px; font-weight: 700; letter-spacing: .08em; }
+.section-name i { height: 2px; width: 34px; background: #bd7048; }
+.board-heading h1 { margin: 13px 0 9px; font-size: 46px; letter-spacing: -.04em; line-height: 1.2; }
+.case-summary { font-size: 24px; line-height: 1.5; color: var(--muted); }
+.comparison {
+  display: grid; grid-template-columns: 34% minmax(0,1fr); margin-top: 30px;
+  border-top: 2px solid var(--ink); flex: 1; min-height: 0;
+}
+.textbook,.student { padding-top: 22px; min-width: 0; }
+.textbook { padding-right: 34px; border-right: 1px solid #c7cec3; }
+.student { padding-left: 35px; }
+.context-label { font-size: 20px; font-weight: 700; color: var(--muted); }
+.student .context-label { color: var(--orange); }
+.comparison h2 { font-size: 32px; line-height: 1.3; margin-top: 3px; letter-spacing: -.035em; }
+.given-figure,.work-images { margin-top: 17px !important; }
+.given-figure canvas {
+  width: 100%; height: 214px; display: block; object-fit: contain; background-color: #eaf0e7;
+  background-image: linear-gradient(90deg,#899e8e19 1px, transparent 1px),linear-gradient(#899e8e19 1px, transparent 1px);
+  background-size: 18px 18px;
+}
+.comparison figcaption { font-size: 20px; line-height: 1.45; color: var(--muted); padding-top: 7px; }
+.question-label, .commentary-rows h3 { color: var(--orange); font-size: 20px; font-weight: 700; }
+.textbook .question-label { margin-top: 20px; }
+.given-prompt { margin-top: 4px !important; font-size: 23px; line-height: 1.53; }
+.work-images { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.work-images figure { min-width: 0; }
+.work-images .photo-mount {
+  height: 214px; background: #e8ebe4; overflow: hidden;
+  display: flex; align-items: center; justify-content: center;
+  --capture-small-photo-height: 159px;
+}
+.work-images img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.work-images .diagram { background: white; }
+.commentary-rows { border-top: 1px solid #c7cec3; margin-top: 14px; padding-top: 10px; }
+.commentary-rows > div { display: grid; grid-template-columns: 97px 1fr; gap: 7px; align-items: baseline; margin-bottom: 5px; }
+.commentary-rows p { font-size: 23px; line-height: 1.48; }
+html[data-capture-text="large"] .compare-board .commentary-rows p,
+html[data-capture-text="large"] .compare-board .given-prompt { font-size: 26px; line-height: 1.35; }
+@media(max-width:799px) {
+  html[data-capture-text="large"] .compare-board .commentary-rows p,
+  html[data-capture-text="large"] .compare-board .given-prompt { font-size: 19px; line-height: 1.5; }
+}
+.transfer { margin-top: 17px; border-top: 3px solid var(--orange); padding-top: 16px; }
+.transfer-main { display: flex; align-items: baseline; gap: 27px; }
+.transfer-main h2 { font-size: 24px; color: var(--orange); white-space: nowrap; }
+.transfer-main p { font-size: 27px; font-weight: 650; line-height: 1.4; }
+.credit { color: var(--muted); font-size: 18px; line-height: 1.5; margin-top: 15px !important; }
+.sr-only { position: absolute; width: 1px; height: 1px; clip-path: inset(50%); overflow: hidden; white-space: nowrap; }
+html[data-capture-photos="small"] .work-images .photo-mount { height: var(--capture-small-photo-height); }
+html[data-capture-photos="small"] .given-figure canvas { height: 159px; }
+@media (max-width: 799px) {
+  .navigation { padding: 8px 14px; gap: 8px 16px; flex-wrap: wrap; }
+  .case-nav { order: 3; width: 100%; justify-content: flex-start; }
+  .case-nav button { padding: 6px 12px; }
+  .compare-board { width: 100%; height: auto; padding: 26px clamp(16px, 4.2vw, 34px); overflow: visible; }
+  .section-name { font-size: 14px; gap: 8px; }
+  .board-heading h1 { font-size: clamp(28px, 6.3vw, 42px); letter-spacing: -.04em; }
+  .case-summary { font-size: 16px; }
+  .comparison { display: block; margin-top: 22px; }
+  .textbook,.student { padding: 18px 0 0; border: 0; }
+  .student { border-top: 1px solid #c7cec3; margin-top: 22px; }
+  .context-label { font-size: 14px; }
+  .comparison h2 { font-size: 26px; }
+  .given-figure canvas { height: 160px; }
+  html[data-capture-photos="small"] .given-figure canvas { height: 120px; }
+  .given-figure,.work-images { margin-top: 12px !important; }
+  .comparison figcaption, .question-label, .commentary-rows h3 { font-size: 14px; }
+  .textbook .question-label { margin-top: 12px; }
+  .given-prompt, .commentary-rows p { font-size: 17px; }
+  .commentary-rows > div { grid-template-columns: 66px 1fr; margin-bottom: 8px; }
+  .work-images { gap: 9px; }
+  .work-images .photo-mount { height: clamp(120px, 29vw, 205px); --capture-small-photo-height: 108px; }
+  .transfer-main { display: block; }
+  .transfer-main h2 { font-size: 16px; margin-bottom: 4px; }
+  .transfer-main p { font-size: 20px; }
+  .credit { font-size: 13px; }
+}

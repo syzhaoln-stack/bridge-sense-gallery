@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#153f39">
+  <title>教材图示挑战 · 失效概率 · 桥见</title>
+  <link rel="stylesheet" href="./compare.css">
+  <link rel="stylesheet" href="./capture.css">
+  <script defer src="./capture.js"></script>
+  <style>
+    body { --capture-surround: #faf7ef; }
+    .navigation { flex-wrap: wrap; gap: 8px 30px; }
+    .navigation a { white-space: nowrap; }
+    [data-capture-toolbar] .capture-action:hover { background: #17443e; }
+    .original { color: #824222; text-underline-offset: .2em; }
+    .poster { width: 100%; max-width: 1600px; margin: 0 auto; aspect-ratio: 16 / 9; background: #faf7ef; }
+    .poster img { display: block; width: 100%; height: 100%; object-fit: contain; }
+    .reading-note { max-width: 54em; margin: 24px auto; padding: 0 20px 12px; font-size: 16px; line-height: 1.7; }
+    .reading-note h2 { font-size: 1.12em; margin: 0; }
+    .reading-note p { margin: 5px 0; }
+    @media (max-width: 799px) {
+      .navigation [data-capture-toolbar] { width: 100%; margin-left: 0; }
+    }
+  </style>
+</head>
+<body>
+  <header class="navigation" data-capture-chrome>
+    <a href="./compare.html" class="home-link">← 返回教学对照</a>
+    <a class="original" href="./assets/failure-probability.png">查看原图（2880 × 1620）</a>
+    <div data-capture-toolbar data-capture-no-photo></div>
+  </header>
+  <main data-capture-stage aria-label="教材图示挑战">
+    <figure class="poster" data-capture-board>
+      <img src="./assets/failure-probability.png" width="2880" height="1620"
+        alt="两条曲线的重叠面积，等于失效概率吗？抗力 R 和荷载效应 S 独立，且都在 0 到 100 kN 间均匀分布。左图的边缘概率密度曲线完全重合，重叠面积为 1。右图横轴为 R，纵轴为 S，对角线上方 S 大于 R 的区域发生失效，概率为二分之一。学生任务是给教材作者写一封信，附上图和判断理由。">
+    </figure>
+  </main>
+  <aside class="reading-note" data-capture-chrome>
+    <h2>与教材对读</h2>
+    <p>孙训方等《材料力学（Ⅰ）》第 6 版第 47 页图 2–31 将应力和强度的两条正态密度曲线画在同一轴上。第 48 页再用“强度减应力”的差值计算可靠度。</p>
+    <p>这张课堂重绘图换用独立均匀分布检验一种读法：边缘密度曲线的几何重叠面积，能否直接读作失效概率？</p>
+  </aside>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>课堂读图与学生采集 · 桥见</title>
+  <link rel="stylesheet" href="compare.css">
+  <link rel="stylesheet" href="capture.css">
+  <script defer src="compare.js"></script>
+  <script defer src="capture.js"></script>
+</head>
+<body>
+  <header class="navigation" data-capture-chrome>
+    <a href="./" class="home-link"><span aria-hidden="true">←</span> 返回桥见</a>
+    <nav aria-label="选择课堂案例" class="case-nav">
+      <button type="button" data-case="bed" aria-pressed="true">宿舍床架</button>
+      <button type="button" data-case="hose" aria-pressed="false">钢丝水管</button>
+      <button type="button" data-case="bracket" aria-pressed="false">空调支架</button>
+    </nav>
+    <a href="challenge.html" class="home-link">教材图示挑战</a>
+    <div data-capture-toolbar></div>
+  </header>
+  <main data-capture-stage>
+    <article class="compare-board" data-capture-board aria-labelledby="case-title">
+      <header class="board-heading">
+        <p class="section-name">课堂读图 <i aria-hidden="true"></i> 学生采集</p>
+        <h1 id="case-title">宿舍床架的斜撑怎样传力？</h1>
+        <p class="case-summary" id="case-summary"></p>
+      </header>
+      <div class="comparison">
+        <section class="textbook" aria-labelledby="given-heading">
+          <p class="context-label">课堂读图</p>
+          <h2 id="given-heading">读一个给定模型</h2>
+          <figure class="given-figure">
+            <canvas id="model" width="840" height="434"></canvas>
+            <figcaption id="model-caption"></figcaption>
+          </figure>
+          <h3 class="question-label">从图中读出</h3>
+          <p class="given-prompt" id="given-prompt"></p>
+        </section>
+        <section class="student" aria-labelledby="student-heading">
+          <p class="context-label">学生采集</p>
+          <h2 id="student-heading">把生活物件画成模型</h2>
+          <div class="work-images" id="work-images">
+            <figure><div class="photo-mount" data-capture-photo><img id="photo-a" alt=""></div><figcaption id="caption-a"></figcaption></figure>
+            <figure><div class="photo-mount" data-capture-photo><img id="photo-b" alt=""></div><figcaption id="caption-b"></figcaption></figure>
+          </div>
+          <div class="commentary-rows">
+            <div><h3>学生标注</h3><p id="student-note"></p></div>
+            <div><h3>读者追问</h3><p id="reader-prompt"></p></div>
+            <div><h3>力学解释</h3><p id="mechanics"></p></div>
+          </div>
+        </section>
+      </div>
+      <footer class="transfer">
+        <div class="transfer-main"><h2>换个情境</h2><p id="transfer-prompt"></p></div>
+        <p class="credit" id="credit"></p>
+      </footer>
+    </article>
+  </main>
+  <p id="status" class="sr-only" aria-live="polite"></p>
+</body>
+</html>
